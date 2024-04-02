@@ -1,0 +1,7 @@
+.env
+configs/config.yaml
+configs/init.sql
+docker-compose.yml
+uploads/
+internal/repository/*.go
+internal/services/*.go

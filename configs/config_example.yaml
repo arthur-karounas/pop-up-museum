@@ -1,0 +1,25 @@
+server:
+  port: "1234"
+  mode: "debug"
+
+mysql:
+  name: "example"
+  host: "example"
+  port: "9876"
+  dbname: "database"
+
+application:
+  uploads: "uploads/"
+  appeal:
+    subject: "Ваше обращение рассмотрено"
+    message: "Ваше обращение было рассмотрено! Подробнее в Вашем личном кабинете"
+  reservation:
+    subject: "Ваша запись одобрена"
+    message: "Ваша запись была одобрена! Подробнее в Вашем личном кабинете"
+  passupdate:
+    subject: "Восстановление пароля"
+    message: "Для смены пароля Вашей учётной записи введите этот код в приложении: %s"
+
+email:
+  host: "smtp.gmail.com"
+  port: 555

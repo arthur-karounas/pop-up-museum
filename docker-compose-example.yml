@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  web:
+    build: ./
+    command: ./pop-up-museum
+    ports:
+      - 8000:8000
+    depends_on:
+      - database
+    environment:
+      - DB_PASSWORD=examplepassword
+      - TOKEN_SIGNING_KEY=examplekey
+      - HASH_SALT=examplehashsalt
+      - EMAIL_USERNAME=emailsender@gmail.com
+      - EMAIL_PASSWORD=examplepassword
+    network_mode: "host"
+
+  database:
+    image: mysql:8.0
+    container_name: database
+    environment:
+      MYSQL_DATABASE: pop-up-museum
+      MYSQL_ROOT_PASSWORD: examplepassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./configs:/docker-entrypoint-initdb.d
+    network_mode: "host"
